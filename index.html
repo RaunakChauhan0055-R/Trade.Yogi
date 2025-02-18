@@ -1,0 +1,162 @@
+<div id="header">
+    <video class="video-bg" autoplay muted loop>
+        <source src="https://media.istockphoto.com/id/1394027708/video/smoke-clears-in-the-spotlight-on-dark-background-4k.mp4?p=1&s=mp4-640x640-is&k=20&c=lgEZWhe_wwun4-6S57MAcCnjf-TlaVdnS027gHej9c8=">
+        Your browser does not support the video.
+    </video>
+
+    <div id="main">
+        <form id="signUpForm"action="https://raunakchauhan0055-r.github.io/TradeYogi.com/">
+            <div class="eng">
+                <h1>Trade Yogi </h1>
+                <label for="a">Your name</label>
+                <input type="text" id="a" name="Name" required>
+                <label for="b">Your Email</label>
+                <input type="email" id="b" name="Email" required>
+                <label for="c">Password</label>
+                <input type="password" id="c" name="Password" required>
+
+                <div class="terms-checkbox">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the <a href="#">Terms & Conditions</a></label>
+                </div>
+
+                <p id="errorMessage" style="color: red; font-size: 14px;"></p>
+
+                <button type="submit" class="butt">Sign Up</button>
+            </div>
+        </form>
+    </div>
+</div>
+<style>
+ * {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+#main {
+    border: 2px solid black;
+    background: linear-gradient(to right, #c7c4c4, #1d1c1c);
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 40px;
+    width: 300px;
+    margin: 70px auto;
+    backface-visibility: ;
+    
+    }
+
+
+.eng {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:auto;
+    
+}
+h1{
+    padding-bottom: 40px;
+    font-size: 50px;
+    
+}
+input{
+    border-radius: 5px;
+    padding: 5px;
+}
+input:hover{
+    background-color: grey;
+}
+.butt{
+    color: whitesmoke;
+    background-color: black;
+    margin-top: 30px;
+    font-size: 20px;
+    border-radius: 999px;
+    padding: 10px 90px;
+    align-self: center;
+    font-weight: bold;
+    padding: 15px 100px;
+}
+
+button:hover{
+    color: black;
+    background-color: whitesmoke;
+}
+.video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    background-color: black;
+}
+   #main {
+            background-color: white;
+            padding: 30px;
+            border-radius: 20px;
+            width: 300px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideUp 1s ease-in-out forwards;
+        }
+    
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+    
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+input,label {
+    margin-bottom: 15px;
+}
+.terms-checkbox {
+    margin-top: 15px;
+}
+
+.terms-checkbox input {
+    margin-right: 10px;
+}
+
+.terms-checkbox a {
+    color: #0c3561;
+}
+
+.terms-checkbox a:hover {
+    text-decoration: underline;
+}
+.social-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+ 
+</style>
+<script>
+  const form = document.getElementById('signUpForm');
+const errorMessage = document.getElementById('errorMessage');
+
+form.addEventListener('submit', function (event) {
+    const name = document.getElementById('a').value.trim();
+    const email = document.getElementById('b').value.trim();
+    const password = document.getElementById('c').value.trim();
+    const termsAccepted = document.getElementById('terms').checked;
+
+    if (!name || !email || !password || !termsAccepted) {
+        event.preventDefault();
+        errorMessage.textContent = 'Please fill all fields and accept the Terms & Conditions.';
+    } else {
+        errorMessage.textContent = '';
+    }
+});
+</script>
